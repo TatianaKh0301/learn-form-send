@@ -1,0 +1,22 @@
+{
+  "name": "learn-form-send",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel src/*.html",
+    "build": "parcel build src/*.html --public-url /learn-form-send/"
+  },
+
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TatianaKh0301/learn-form-send.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TatianaKh0301/learn-form-send/issues"
+  },
+  "homepage": "https://github.com/TatianaKh0301/learn-form-send#readme"
+}
