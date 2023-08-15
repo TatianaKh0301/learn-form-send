@@ -7,7 +7,6 @@
     "start": "parcel src/*.html",
     "build": "parcel build src/*.html --public-url /learn-form-send/"
   },
-
   "repository": {
     "type": "git",
     "url": "git+https://github.com/TatianaKh0301/learn-form-send.git"
@@ -18,5 +17,12 @@
   "bugs": {
     "url": "https://github.com/TatianaKh0301/learn-form-send/issues"
   },
-  "homepage": "https://github.com/TatianaKh0301/learn-form-send#readme"
+  "homepage": "https://github.com/TatianaKh0301/learn-form-send#readme",
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.9.3",
+    "parcel": "^2.9.3",
+    "parcel-reporter-clean-dist": "^1.0.4",
+    "posthtml-include": "^1.7.4"
+  },
+  "browserslist": "> 0.5%, last 2 versions, not dead"
 }
