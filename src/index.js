@@ -9,10 +9,26 @@ document.addEventListener('DOMContentLoaded', function() {
 
         let error = formValidate(form);
 
-        if (error === 0) {
+        let formData = new FormData(form);
+        // formData.append()
 
+        if (error === 0) {
+            form.classList.add('_sending');
+            let response = await fetch('sendmail.php', {
+                method: 'POST',
+                body: formData
+            });
+            if (response.ok) {
+                let result = await response.json();
+                alert(result.message);
+                form.reset();
+                form.classList.remove('_sending');
+            } else {
+                alert("Error");
+            }
         } else {
             alert('Please, fill in required fields');
+            form.classList.remove('_sending');
         }
     }
 
@@ -56,6 +72,36 @@ document.addEventListener('DOMContentLoaded', function() {
         return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(input.value);
     }
 
-    const formImage = document.getElementById('formImage');
-    const formPreview = document.getElementById('formPreview');
+    // const formImage = document.getElementById('formImage');
+    // const formPreview = document.getElementById('formPreview');
+
+    // formImage.addEventListener('change', () => {
+    //     uploadFile(formImage.files[0]);
+    // });
+
+    // function uploadFile(file) {
+        // ------------------check type of file----------------------
+        // if (!['image/jpeg', 'image/png', 'image/gif'].includes(file.type)) {
+        //     alert('You can choose only images');
+        //     formImage.value = '';
+        //     return;
+        // }
+
+        // -------------------check size of file ------------------------
+    //     if (file.size > 2 * 1024 * 1024) {
+    //         alert('File should be less than 2MB');
+    //         return;
+    //     }
+
+    //     var reader = new FileReader();
+    //     reader.onload = function (e) {
+    //         form.Preview.innerHTML = `img src="${e.target.result}" alt="photo"`;
+    //     };
+    //     reader.onerror = function (e) {
+    //         alert("Error");
+    //     };
+    //     reader.readAsDataURL(file);
+
+
+    // }
 });
